@@ -208,7 +208,7 @@ func (r *Registry) State(host string) HostState {
 	return HostState{
 		Host:          h,
 		Scanned:       true,
-		CurrentPorts:  last.Ports,
+		CurrentPorts:  append([]int(nil), last.Ports...),
 		LastScannedAt: &last.ScannedAt,
 		ScanCount:     len(history),
 	}
